@@ -22,7 +22,7 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>root</artifactId>
+        <artifactId>sdk</artifactId>
         <groupId>org.ehrbase.sdk</groupId>
         <version>0.3.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
@@ -33,7 +33,7 @@
     <dependencies>
         <dependency>
             <groupId>org.ehrbase.sdk</groupId>
-            <artifactId>client-library</artifactId>
+            <artifactId>client</artifactId>
         </dependency>
 
         <dependency>
