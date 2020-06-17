@@ -74,7 +74,7 @@ public class DefaultRestEhrFieldsEndpointIT {
         EhrStatus ehrStatus = openEhrClient.ehrEndpoint().getEhrStatus(ehrId).get();
         ehrStatus.setQueryable(false);
         ehrStatus.setModifiable(false);
-        HierObjectId subjectId = new HierObjectId("6ee110de-08f8-4fac-8372-820650f150a9");
+        HierObjectId subjectId = new HierObjectId(UUID.randomUUID().toString());
         ehrStatus.setSubject(new PartySelf(new PartyRef(subjectId, "default", "PERSON")));
 
         String value = IOUtils.toString(ItemStruktureTestDataCanonicalJson.SIMPLE_EHR_OTHER_Details.getStream(), UTF_8);
