@@ -15,22 +15,25 @@
  *  limitations under the License.
  */
 
-package org.ehrbase.client.building.rmobjektskeletonbuilder;
+package org.ehrbase.client.building.rmobjectskeletonbuilder;
 
-import org.openehr.schemas.v1.CSTRING;
+import com.nedap.archie.rm.datavalues.quantity.datetime.DvDateTime;
+import org.openehr.schemas.v1.CDATETIME;
 
-public class StringSkeletonBuilder implements RmObjektSkeletonBuilder<CSTRING, String> {
+public class DvDateTimeSkeletonBuilder implements RmObjectSkeletonBuilder<CDATETIME, DvDateTime> {
     @Override
-    public Class<CSTRING> getXmlClass() {
-        return CSTRING.class;
+    public Class<CDATETIME> getXmlClass() {
+        return CDATETIME.class;
     }
 
     @Override
-    public String getRmObjekt(CSTRING xml) {
+    public DvDateTime getRmObject(CDATETIME xml) {
+        DvDateTime dvDateTime;
         if (xml.isSetAssumedValue()) {
-            return xml.getAssumedValue();
+            dvDateTime = new DvDateTime(xml.getAssumedValue());
         } else {
-            return null;
+            dvDateTime = new DvDateTime();
         }
+        return dvDateTime;
     }
 }

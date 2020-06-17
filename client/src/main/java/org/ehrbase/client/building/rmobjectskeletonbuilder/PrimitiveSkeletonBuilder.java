@@ -14,23 +14,18 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
+package org.ehrbase.client.building.rmobjectskeletonbuilder;
 
-package org.ehrbase.client.building.rmobjektskeletonbuilder;
+import org.openehr.schemas.v1.CPRIMITIVEOBJECT;
 
-import org.openehr.schemas.v1.CBOOLEAN;
-
-public class BooleanSkeletonBuilder implements RmObjektSkeletonBuilder<CBOOLEAN, Boolean> {
+public class PrimitiveSkeletonBuilder implements RmObjectSkeletonBuilder<CPRIMITIVEOBJECT, Object> {
     @Override
-    public Class<CBOOLEAN> getXmlClass() {
-        return CBOOLEAN.class;
+    public Class<CPRIMITIVEOBJECT> getXmlClass() {
+        return CPRIMITIVEOBJECT.class;
     }
 
     @Override
-    public Boolean getRmObjekt(CBOOLEAN xml) {
-        if (xml.isSetAssumedValue()) {
-            return xml.getAssumedValue();
-        } else {
-            return null;
-        }
+    public Object getRmObject(CPRIMITIVEOBJECT xml) {
+        return null;
     }
 }

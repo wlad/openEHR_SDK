@@ -15,20 +15,20 @@
  *  limitations under the License.
  */
 
-package org.ehrbase.client.building.rmobjektskeletonbuilder;
+package org.ehrbase.client.building.rmobjectskeletonbuilder;
 
 import com.nedap.archie.rm.datavalues.quantity.DvQuantity;
 import org.openehr.schemas.v1.CDVQUANTITY;
 import org.openehr.schemas.v1.DVQUANTITY;
 
-public class DvQuantitySkeletonBuilder implements RmObjektSkeletonBuilder<CDVQUANTITY, DvQuantity> {
+public class DvQuantitySkeletonBuilder implements RmObjectSkeletonBuilder<CDVQUANTITY, DvQuantity> {
     @Override
     public Class<CDVQUANTITY> getXmlClass() {
         return CDVQUANTITY.class;
     }
 
     @Override
-    public DvQuantity getRmObjekt(CDVQUANTITY xml) {
+    public DvQuantity getRmObject(CDVQUANTITY xml) {
         DvQuantity dvQuantity = new DvQuantity();
         if (xml.isSetAssumedValue()) {
             DVQUANTITY assumedValue = xml.getAssumedValue();

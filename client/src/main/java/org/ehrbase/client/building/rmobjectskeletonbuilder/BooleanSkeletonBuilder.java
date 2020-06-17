@@ -15,21 +15,22 @@
  *  limitations under the License.
  */
 
-package org.ehrbase.client.building.rmobjektskeletonbuilder;
+package org.ehrbase.client.building.rmobjectskeletonbuilder;
 
-import org.openehr.schemas.v1.CREAL;
+import org.openehr.schemas.v1.CBOOLEAN;
 
-public class DoubleSkeletonBuilder implements RmObjektSkeletonBuilder<CREAL, Double> {
+public class BooleanSkeletonBuilder implements RmObjectSkeletonBuilder<CBOOLEAN, Boolean> {
     @Override
-    public Class<CREAL> getXmlClass() {
-        return CREAL.class;
+    public Class<CBOOLEAN> getXmlClass() {
+        return CBOOLEAN.class;
     }
 
     @Override
-    public Double getRmObjekt(CREAL xml) {
+    public Boolean getRmObject(CBOOLEAN xml) {
         if (xml.isSetAssumedValue()) {
-            return Double.parseDouble("" + xml.getAssumedValue());
+            return xml.getAssumedValue();
+        } else {
+            return null;
         }
-        return null;
     }
 }

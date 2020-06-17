@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-package org.ehrbase.client.building.rmobjektskeletonbuilder;
+package org.ehrbase.client.building.rmobjectskeletonbuilder;
 
 import com.nedap.archie.rm.datatypes.CodePhrase;
 import com.nedap.archie.rm.datavalues.DvCodedText;
@@ -24,14 +24,14 @@ import com.nedap.archie.rm.support.identification.TerminologyId;
 import org.openehr.schemas.v1.CDVORDINAL;
 import org.openehr.schemas.v1.DVORDINAL;
 
-public class DvOrdinalSkeletonBuilder implements RmObjektSkeletonBuilder<CDVORDINAL, DvOrdinal> {
+public class DvOrdinalSkeletonBuilder implements RmObjectSkeletonBuilder<CDVORDINAL, DvOrdinal> {
     @Override
     public Class<CDVORDINAL> getXmlClass() {
         return CDVORDINAL.class;
     }
 
     @Override
-    public DvOrdinal getRmObjekt(CDVORDINAL xml) {
+    public DvOrdinal getRmObject(CDVORDINAL xml) {
         DvOrdinal dvOrdinal = new DvOrdinal();
         if (xml.isSetAssumedValue()) {
             DVORDINAL assumedValue = xml.getAssumedValue();

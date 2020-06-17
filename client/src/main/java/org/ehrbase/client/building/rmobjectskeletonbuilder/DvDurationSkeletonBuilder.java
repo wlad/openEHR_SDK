@@ -15,25 +15,25 @@
  *  limitations under the License.
  */
 
-package org.ehrbase.client.building.rmobjektskeletonbuilder;
+package org.ehrbase.client.building.rmobjectskeletonbuilder;
 
-import com.nedap.archie.rm.datavalues.quantity.datetime.DvTime;
-import org.openehr.schemas.v1.CTIME;
+import com.nedap.archie.rm.datavalues.quantity.datetime.DvDuration;
+import org.openehr.schemas.v1.CDURATION;
 
-public class DvTimeSkeletonBuilder implements RmObjektSkeletonBuilder<CTIME, DvTime> {
+public class DvDurationSkeletonBuilder implements RmObjectSkeletonBuilder<CDURATION, DvDuration> {
     @Override
-    public Class<CTIME> getXmlClass() {
-        return CTIME.class;
+    public Class<CDURATION> getXmlClass() {
+        return CDURATION.class;
     }
 
     @Override
-    public DvTime getRmObjekt(CTIME xml) {
-        DvTime dvTime;
+    public DvDuration getRmObject(CDURATION xml) {
+        DvDuration dvDuration;
         if (xml.isSetAssumedValue()) {
-            dvTime = new DvTime(xml.getAssumedValue());
+            dvDuration = new DvDuration(xml.getAssumedValue());
         } else {
-            dvTime = new DvTime();
+            dvDuration = new DvDuration();
         }
-        return dvTime;
+        return dvDuration;
     }
 }

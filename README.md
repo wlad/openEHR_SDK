@@ -1,20 +1,27 @@
 # EHRBase SDK (Beta) 
+
 ## client 
-Generic openEHR Client and Objekt-mapper:
+Generic openEHR Client and Object-mapper:
 * Define entity classes for openEHR-Templates (v1.4) in a jpa like way
-* Map entity <-> Archie RM objekts.
+* Map entity <-> Archie RM objects.
 * RestClient for openEHR Rest-API 
 * AQL-Query generator (TODO)
+
 ## generator 
-* Autogenerate  entity classes from template
+* Autogenerate entity classes from template
+
 ## opt-1.4
 * Opt 1.4 xmlbeans
+
 ## response-dto
-* DTO's representing the response for the ehrsacpe and openEHR Rest API
-## terminologie
-* Mini openEHR terminologie implementation
+* DTOs representing the response for the ehrsacpe and openEHR Rest API
+
+## terminology
+* Mini openEHR terminology implementation
+
 ## validation
 * Validation of Compositions against templates
+
 ## test-data
 * Example templates and Composition for tests
 

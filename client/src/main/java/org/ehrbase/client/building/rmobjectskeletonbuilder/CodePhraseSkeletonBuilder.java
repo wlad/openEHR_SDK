@@ -15,21 +15,21 @@
  *  limitations under the License.
  */
 
-package org.ehrbase.client.building.rmobjektskeletonbuilder;
+package org.ehrbase.client.building.rmobjectskeletonbuilder;
 
 import com.nedap.archie.rm.datatypes.CodePhrase;
 import com.nedap.archie.rm.support.identification.TerminologyId;
 import org.openehr.schemas.v1.CCODEPHRASE;
 import org.openehr.schemas.v1.CODEPHRASE;
 
-public class CodePhraseSkeletonBuilder implements RmObjektSkeletonBuilder<CCODEPHRASE, CodePhrase> {
+public class CodePhraseSkeletonBuilder implements RmObjectSkeletonBuilder<CCODEPHRASE, CodePhrase> {
     @Override
     public Class<CCODEPHRASE> getXmlClass() {
         return CCODEPHRASE.class;
     }
 
     @Override
-    public CodePhrase getRmObjekt(CCODEPHRASE xml) {
+    public CodePhrase getRmObject(CCODEPHRASE xml) {
         CodePhrase codePhrase = new CodePhrase();
         if (xml.isSetAssumedValue()) {
             CODEPHRASE assumedValue = xml.getAssumedValue();

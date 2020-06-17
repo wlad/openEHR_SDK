@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2019  Stefan Spiska, Vitasystems GmbH
+ *  Copyright (c) 2019  Stefan Spiska (Vitasystems GmbH) and Hannover Medical School
  *  This file is part of Project EHRbase
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +15,21 @@
  *  limitations under the License.
  */
 
-package org.ehrbase.client.building.rmobjektskeletonbuilder;
+package org.ehrbase.client.building.rmobjectskeletonbuilder;
 
-import org.apache.xmlbeans.XmlObject;
+import org.openehr.schemas.v1.CREAL;
 
-public interface RmObjektSkeletonBuilder<T extends XmlObject, R> {
+public class DoubleSkeletonBuilder implements RmObjectSkeletonBuilder<CREAL, Double> {
+    @Override
+    public Class<CREAL> getXmlClass() {
+        return CREAL.class;
+    }
 
-    Class<T> getXmlClass();
-
-    R getRmObjekt(T xml);
-
+    @Override
+    public Double getRmObject(CREAL xml) {
+        if (xml.isSetAssumedValue()) {
+            return Double.parseDouble("" + xml.getAssumedValue());
+        }
+        return null;
+    }
 }

@@ -14,18 +14,23 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.ehrbase.client.building.rmobjektskeletonbuilder;
 
-import org.openehr.schemas.v1.CPRIMITIVEOBJECT;
+package org.ehrbase.client.building.rmobjectskeletonbuilder;
 
-public class PrimitiveSkeletonBuilder implements RmObjektSkeletonBuilder<CPRIMITIVEOBJECT, Object> {
+import org.openehr.schemas.v1.CSTRING;
+
+public class StringSkeletonBuilder implements RmObjectSkeletonBuilder<CSTRING, String> {
     @Override
-    public Class<CPRIMITIVEOBJECT> getXmlClass() {
-        return CPRIMITIVEOBJECT.class;
+    public Class<CSTRING> getXmlClass() {
+        return CSTRING.class;
     }
 
     @Override
-    public Object getRmObjekt(CPRIMITIVEOBJECT xml) {
-        return null;
+    public String getRmObject(CSTRING xml) {
+        if (xml.isSetAssumedValue()) {
+            return xml.getAssumedValue();
+        } else {
+            return null;
+        }
     }
 }
