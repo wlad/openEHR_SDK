@@ -40,8 +40,18 @@ Generic openEHR Client and Object-mapper:
 mvn clean install
 ```
 
+### Javadoc Documentation
+
+Creation of the Javadoc documentation can be invoked with:
+```bash
+mvn site
+```
+
+It can be accessed at `target/site/apidocs/index.html`
+
 ## Usage
 ###  Entity generation
+
 To generate an entity class from a template use
 ```bash
  java  -jar generator-version.jar
@@ -61,10 +71,23 @@ see FlattenerTest and UnflattenerTest
 - composition: see DefaultRestCompositionEndpointIT
 - template : see DefaultRestTemplateEndpointIT
 - directory : see DefaultRestDirectoryEndpointIT
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+Please make sure to update tests and the documentation as appropriate.
+
+### Checkstyle
+
+[Checkstyle](https://github.com/checkstyle/checkstyle) is set up and configured to check for missing or incomplete Javadoc
+documentation.
+
+Run the following to execute the check and to create the report: 
+```bash
+mvn site
+```
+
+The report can be accessed at `target/site/checkstyle-aggregate.html`.
 
 ## License
 [APACHE 2.0](https://www.apache.org/licenses/LICENSE-2.0)
