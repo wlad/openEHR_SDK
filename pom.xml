@@ -327,7 +327,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
-                    <doclint>none</doclint>  <!-- Turnoff all checks -->
+                    <!--doclint>none</doclint-->  <!-- Turnoff all checks -->
                     <!-- exclude packages that are not part of the SDK itself -->
                     <excludePackageNames>openEHR.*, org.openehr.*, com.oceaninformatics.*</excludePackageNames>
                 </configuration>
@@ -348,30 +348,6 @@
                             <report>javadoc</report>
                         </reports>
                     </reportSet>
-
-                    <!--<reportSet>
-                        &lt;!&ndash; Generates the JavaDoc coverage report &ndash;&gt;
-                        <id>javadoc-coverage</id>
-                        <reports>
-                            <report>javadoc</report>
-                        </reports>
-                        <configuration>
-                            <name>JavaDoc Coverage</name>
-                            <description>Percentage of the code coverage by JavaDoc documentation.</description>
-                            <doclet>com.manoelcampos.javadoc.coverage.CoverageDoclet</doclet>
-                            <docletArtifact>
-                                <groupId>com.manoelcampos</groupId>
-                                <artifactId>javadoc-coverage</artifactId>
-                                <version>1.1.0</version>
-                            </docletArtifact>
-                            &lt;!&ndash; This is the same as using -d into the additionalparam tag &ndash;&gt;
-                            <destDir>javadoc-coverage</destDir>
-                            &lt;!&ndash; You can also use -o instead of -outputName to define
-                            the name of the generated report. &ndash;&gt;
-                            <additionalparam>-outputName "index.html"</additionalparam>
-                            <useStandardDocletOptions>false</useStandardDocletOptions>
-                        </configuration>
-                    </reportSet>-->
                 </reportSets>
             </plugin>
             <plugin>

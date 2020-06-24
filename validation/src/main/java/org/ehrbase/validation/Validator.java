@@ -52,8 +52,8 @@ public class Validator implements Serializable {
     /**
      * Validate a composition
      *
-     * @param composition
-     * @throws IllegalArgumentException
+     * @param composition TODO-285
+     * @throws IllegalArgumentException TODO-285
      */
     public void check(Composition composition) throws IllegalArgumentException {
         new ConstraintChecker(lenient, composition, optConstraint).validate();
@@ -62,8 +62,8 @@ public class Validator implements Serializable {
     /**
      * Validate an ItemStructure
      *
-     * @param itemStructure
-     * @throws IllegalArgumentException
+     * @param itemStructure TODO-285
+     * @throws IllegalArgumentException TODO-285
      */
     public void check(ItemStructure itemStructure) throws IllegalArgumentException {
         new ConstraintChecker(lenient, itemStructure, optConstraint).validate();
@@ -73,7 +73,7 @@ public class Validator implements Serializable {
      * set the lenient flag
      * if true, the validation is disabled.
      *
-     * @param lenient
+     * @param lenient TODO-285
      */
     public void setLenient(boolean lenient) {
         this.lenient = lenient;

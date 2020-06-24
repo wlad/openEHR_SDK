@@ -29,11 +29,10 @@ import java.util.Map;
 /**
  * Validate a DvBoolean
  *
- * @link https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_boolean_class
- * <p>
- * Created by christian on 7/22/2016.
+ * <p>Created by christian on 7/22/2016.
  * @see com.nedap.archie.aom.primitives.CBoolean
  * @see com.nedap.archie.rm.datavalues.DvBoolean
+ * @see <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_boolean_class">openEHR RM Specification</a>
  */
 public class CBoolean extends CConstraint implements I_CTypeValidate {
 

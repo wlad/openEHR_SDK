@@ -32,11 +32,10 @@ import java.util.Map;
 /**
  * Validate a DvDate
  *
- * @link https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_date_class
- * <p>
- * Created by christian on 7/23/2016.
+ * <p>Created by christian on 7/23/2016.
  * @see DvDate
  * @see com.nedap.archie.aom.primitives.CDate
+ * @see <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_date_class">openEHR RM Specification</a>
  */
 public class CDate extends CConstraint implements I_CTypeValidate {
 

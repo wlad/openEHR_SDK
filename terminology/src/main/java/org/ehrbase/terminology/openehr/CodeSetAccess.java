@@ -63,7 +63,7 @@ public interface CodeSetAccess {
     /**
      * Return true if this codeSet contains given codePhrase
      *
-     * @param code
+     * @param code TODO-285
      * @return true if has
      */
     boolean hasCode(CodePhrase code);
@@ -71,7 +71,7 @@ public interface CodeSetAccess {
     /**
      * Return true if this codeSet contains given 'lang'
      *
-     * @param lang
+     * @param lang TODO-285
      * @return true if has
      */
     boolean hasLang(CodePhrase lang);

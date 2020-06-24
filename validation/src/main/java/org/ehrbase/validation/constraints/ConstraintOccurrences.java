@@ -28,15 +28,15 @@ import org.openehr.schemas.v1.IntervalOfInteger;
 import java.io.Serializable;
 
 /**
- * Container for IntervalOfInteger
- * <v1:occurrences>
- * <v1:lower_included>true</v1:lower_included>
- * <v1:upper_included>true</v1:upper_included>
- * <v1:lower_unbounded>false</v1:lower_unbounded>
- * <v1:upper_unbounded>false</v1:upper_unbounded>
- * <v1:lower>1</v1:lower>
- * <v1:upper>1</v1:upper>
- * </v1:occurrences>
+ * Container for IntervalOfInteger<p>
+ * {@literal <v1:occurrences>}<p>
+ * {@literal <v1:lower_included>true</v1:lower_included>}<p>
+ * {@literal <v1:upper_included>true</v1:upper_included>}<p>
+ * {@literal <v1:lower_unbounded>false</v1:lower_unbounded>}<p>
+ * {@literal <v1:upper_unbounded>false</v1:upper_unbounded>}<p>
+ * {@literal <v1:lower>1</v1:lower>}<p>
+ * {@literal <v1:upper>1</v1:upper>}<p>
+ * {@literal </v1:occurrences>}}<p>
  * Created by christian on 7/14/2016.
  */
 public class ConstraintOccurrences implements Serializable {

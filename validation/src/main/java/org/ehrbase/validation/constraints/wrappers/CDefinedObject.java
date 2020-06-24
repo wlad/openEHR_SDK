@@ -31,9 +31,8 @@ import java.util.Map;
 /**
  * Validate any defined object
  *
- * @link https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_defined_object_class
- * <p>
- * Created by christian on 7/24/2016.
+ * <p>Created by christian on 7/24/2016.
+ * @see <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_defined_object_class">openEHR RM Specification</a>
  */
 public class CDefinedObject extends CConstraint implements I_CArchetypeConstraintValidate {
 

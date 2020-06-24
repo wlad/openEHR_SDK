@@ -23,15 +23,24 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Specific introspect config class, for {@link Element}.
+ */
 public class ElementIntrospectConfig implements RmIntrospectConfig {
 
     private static final Set<String> FIELDS = Stream.of("value").collect(Collectors.toSet());
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class getRMClass() {
         return Element.class;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Set<String> getNonTemplateFields() {
         return FIELDS;

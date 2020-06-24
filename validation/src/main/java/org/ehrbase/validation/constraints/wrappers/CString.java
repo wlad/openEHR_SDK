@@ -28,16 +28,16 @@ import java.util.Map;
 /**
  * Validate a String
  *
- * @link https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_string_class
- * <p>
- * Created by christian on 7/22/2016.
+ * <p>Created by christian on 7/22/2016.
  * @see com.nedap.archie.aom.primitives.CString
+ * @see <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_string_class">openEHR RM Specification</a>
  */
 public class CString extends CConstraint implements I_CTypeValidate {
     protected CString(Map<String, Map<String, String>> localTerminologyLookup) {
         super(localTerminologyLookup);
     }
 
+    // TODO
     @Override
     public void validate(String path, Object aValue, CPRIMITIVE cprimitive) {
         return;

@@ -24,11 +24,15 @@ import org.ehrbase.client.aql.field.AqlField;
 public interface Record1<T1> extends Record {
     /**
      * Get the first field.
+     *
+     * @return TODO-285
      */
     AqlField<T1> field1();
 
     /**
      * Get the first value.
+     *
+     * @return TODO-285
      */
     T1 value1();
 }

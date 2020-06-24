@@ -25,20 +25,32 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Specific introspect config class, for {@link AdminEntry}.
+ */
 public class AdminEntryIntrospectConfig implements RmIntrospectConfig {
 
     private static final Set<String> FIELDS = Stream.of("language", "subject").collect(Collectors.toSet());
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class getRMClass() {
         return AdminEntry.class;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Set<String> getNonTemplateFields() {
         return FIELDS;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ValueSet findExternalValueSet(String fieldName) {
         switch (fieldName) {

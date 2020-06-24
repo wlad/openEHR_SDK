@@ -24,31 +24,43 @@ import org.ehrbase.client.aql.field.AqlField;
 public interface Record3<T1, T2, T3> extends Record {
     /**
      * Get the first field.
+     *
+     * @return TODO-285
      */
     AqlField<T1> field1();
 
     /**
      * Get the second field.
+     *
+     * @return TODO-285
      */
     AqlField<T2> field2();
 
     /**
      * Get the third field.
+     *
+     * @return TODO-285
      */
     AqlField<T3> field3();
 
     /**
      * Get the first value.
+     *
+     * @return TODO-285
      */
     T1 value1();
 
     /**
      * Get the second value.
+     *
+     * @return TODO-285
      */
     T2 value2();
 
     /**
      * Get the third value.
+     *
+     * @return TODO-285
      */
     T3 value3();
 }

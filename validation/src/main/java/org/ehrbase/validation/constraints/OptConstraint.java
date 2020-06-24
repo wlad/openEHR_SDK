@@ -45,7 +45,7 @@ public class OptConstraint {
      *
      * @param opt Operational template
      * @return a constraint mapper corresponding to the template
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException TODO-285
      */
     public OptConstraintMapper map(OPERATIONALTEMPLATE opt) throws IllegalArgumentException {
         CARCHETYPEROOT def = opt.getDefinition();

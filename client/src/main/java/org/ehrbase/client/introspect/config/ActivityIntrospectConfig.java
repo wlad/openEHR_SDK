@@ -23,15 +23,24 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Specific introspect config class, for {@link Activity}.
+ */
 public class ActivityIntrospectConfig implements RmIntrospectConfig {
 
     private static final Set<String> FIELDS = Stream.of("description").collect(Collectors.toSet());
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class getRMClass() {
         return Activity.class;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Set<String> getNonTemplateFields() {
         return FIELDS;

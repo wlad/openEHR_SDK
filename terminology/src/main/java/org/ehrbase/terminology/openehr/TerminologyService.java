@@ -24,31 +24,32 @@ import java.util.Map;
 
 
 /**
- * @link https://specifications.openehr.org/releases/RM/latest/support.html#_terminology_package
+ * @see <a href="https://specifications.openehr.org/releases/RM/latest/support.html#_terminology_package">openEHR RM Specification</a>
  */
 public interface TerminologyService {
 
     /**
      * Return an interface to the terminology named name.
      *
-     * @param name
-     * @return
+     * @param name TODO-285
+     * @return TODO-285
      */
     TerminologyAccess terminology(String name);
 
     /**
      * Return an interface to the terminology named name for a specific language.
      *
-     * @param name
-     * @return
+     * @param name TODO-285
+     * @param language TODO-285
+     * @return TODO-285
      */
     TerminologyAccess terminology(String name, String language);
 
     /**
      * Return an interface to the code_set identified by the external identifier name (e.g. ISO_639-1).
      *
-     * @param name
-     * @return
+     * @param name TODO-285
+     * @return TODO-285
      */
     CodeSetAccess codeSet(String name);
 
@@ -57,8 +58,8 @@ public interface TerminologyService {
     /**
      * Return an interface to the code_set identified internally in openEHR by id.
      *
-     * @param name
-     * @return
+     * @param name TODO-285
+     * @return TODO-285
      */
     CodeSetAccess codeSetForId(String name);
 
@@ -67,8 +68,8 @@ public interface TerminologyService {
     /**
      * True if terminology named name known by this service.
      *
-     * @param name
-     * @return
+     * @param name TODO-285
+     * @return TODO-285
      */
     Boolean hasTerminology(String name);
 
@@ -77,8 +78,8 @@ public interface TerminologyService {
     /**
      * True if code_set linked to internal name (e.g. languages ) is available.
      *
-     * @param name
-     * @return
+     * @param name TODO-285
+     * @return TODO-285
      */
     Boolean hasCodeSet(String name);
 
@@ -87,7 +88,7 @@ public interface TerminologyService {
     /**
      * Set of all terminology identifiers known in the terminology service.
      *
-     * @return
+     * @return TODO-285
      */
     String[] terminologyIdentifiers();
 
@@ -96,7 +97,7 @@ public interface TerminologyService {
     /**
      * Set of all code set identifiers known in the terminology service.
      *
-     * @return
+     * @return TODO-285
      */
     Map<String, String> openehrCodeSets();
 
@@ -114,23 +115,23 @@ public interface TerminologyService {
     /**
      * retrieve the rubric literal for an openehr code and language
      *
-     * @param code
-     * @param language
-     * @return
+     * @param code TODO-285
+     * @param language TODO-285
+     * @return TODO-285
      */
     String getLabelForCode(String code, String language);
 
     /**
      * return the mapping between RM attribute and entries in openehr terminology
      *
-     * @return
+     * @return TODO-285
      */
     AttributeCodesetMapping codesetMapping();
 
     /**
      * returns the set of openehr localized terminologies as defined in their respective XML sources
      *
-     * @return
+     * @return TODO-285
      */
     LocalizedTerminologies localizedTerminologies();
 }

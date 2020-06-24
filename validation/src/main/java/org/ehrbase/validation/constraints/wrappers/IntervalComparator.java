@@ -79,6 +79,7 @@ public class IntervalComparator {
             isWithinLxUx(value, lower, upper);
     }
 
+    // TODO
 //    private static void compareWithinInterval(Comparable value, ConstraintOccurrences occurrences, Comparable lower, Comparable upper) throws IllegalArgumentException {
 //        boolean isLowerIncluded = (occurrences.getLowerIncluded() ? occurrences.getLowerIncluded() : false);
 //        boolean isUpperIncluded = (occurrences.getLowerIncluded() ? occurrences.getUpperIncluded() : false);

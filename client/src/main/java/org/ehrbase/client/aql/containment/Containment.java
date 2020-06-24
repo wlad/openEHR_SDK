@@ -25,7 +25,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.ehrbase.client.aql.query.EntityQuery;
 
 /**
- * Represents an AQL Containment. see <a href="https://specifications.openehr.org/releases/QUERY/latest/AQL.html#_containment">Archetype Query Language<a/>
+ * Represents an AQL Containment.
+ * @see <a href="https://specifications.openehr.org/releases/QUERY/latest/AQL.html#_containment">Archetype Query Language</a>
  */
 public class Containment implements ContainmentExpression {
 
@@ -38,9 +39,10 @@ public class Containment implements ContainmentExpression {
     private String typeName;
 
     /**
-     * Builds a Containment from an archetype  HRID
+     * Builds a Containment from an archetype HRID
      *
-     * @param archetype The Archetype HRID. Sie <a href="https://specifications.openehr.org/releases/AM/latest/Overview.html#_identification_and_the_virtual_archetype_space">Identification and the Virtual Archetype Space</a>
+     * @param archetype The Archetype HRID.
+     * @see <a href="https://specifications.openehr.org/releases/AM/latest/Overview.html#_identification_and_the_virtual_archetype_space">Identification and the Virtual Archetype Space</a>
      */
     public Containment(String archetype) {
         this.archetype = archetype;

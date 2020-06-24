@@ -147,8 +147,8 @@ public class LocatableHelper {
     /**
      * identify the name in the last path segment
      *
-     * @param path
-     * @return
+     * @param path TODO-285
+     * @return TODO-285
      */
     public static String indentifyName(String path) {
         List<String> segments = dividePathIntoSegments(path);
@@ -189,8 +189,8 @@ public class LocatableHelper {
     /**
      * identify the path of sibling in a item list or array corresponding to an unresolved path.
      *
-     * @param unresolvedPath
-     * @return
+     * @param unresolvedPath TODO-285
+     * @return TODO-285
      */
     public static String siblingPath(String unresolvedPath) {
         //if the last path is qualified with a name/value, check if a similar item exists
@@ -213,9 +213,9 @@ public class LocatableHelper {
     /**
      * return a sibling locatable for an unresolved path
      *
-     * @param locatable
-     * @param unresolvedPath
-     * @return
+     * @param locatable TODO-285
+     * @param unresolvedPath TODO-285
+     * @return TODO-285
      */
     public static Locatable siblingAtPath(Locatable locatable, String unresolvedPath) {
         //if the last path is qualified with a name/value, check if a similar item exists
@@ -245,9 +245,9 @@ public class LocatableHelper {
      * return the first parent matching an unresolved path by identify the first item which
      * path matches fully a partial path expression
      *
-     * @param locatable
-     * @param unresolvedPath
-     * @return
+     * @param locatable TODO-285
+     * @param unresolvedPath TODO-285
+     * @return TODO-285
      */
     public static NodeItem backtrackItemAtPath(Locatable locatable, String unresolvedPath) {
 
@@ -314,8 +314,8 @@ public class LocatableHelper {
     /**
      * return a path without name/value in nodeId predicate
      *
-     * @param path
-     * @return
+     * @param path TODO-285
+     * @return TODO-285
      */
     public static String simplifyPath(String path) {
         //if the last path is qualified with a name/value, check if a similar item exists
@@ -341,8 +341,8 @@ public class LocatableHelper {
     /**
      * check if path contains expression like 'and name/value='iteration #1''
      *
-     * @param path
-     * @return
+     * @param path TODO-285
+     * @return TODO-285
      */
     public static boolean hasDefinedOccurence(String path) {
         //if the last path is qualified with a name/value, check if a similar item exists
@@ -367,8 +367,8 @@ public class LocatableHelper {
     /**
      * retrieve the value of an array index in a nodeId predicate
      *
-     * @param nodeId
-     * @return
+     * @param nodeId TODO-285
+     * @return TODO-285
      */
     public static Integer retrieveIndexValue(String nodeId) {
         if (nodeId.contains(INDEX_PREFIX_TOKEN)) {
@@ -432,8 +432,8 @@ public class LocatableHelper {
     /**
      * Computes the path of parent object
      *
-     * @param path
-     * @return
+     * @param path TODO-285
+     * @return TODO-285
      */
     public static String parentPath(String path) {
         List<String> list = dividePathIntoSegments(path);

@@ -22,14 +22,22 @@ import com.nedap.archie.rm.composition.Section;
 import java.util.Collections;
 import java.util.Set;
 
+/**
+ * Specific introspect config class, for {@link Section}.
+ */
 public class SectionIntrospectConfig implements RmIntrospectConfig {
 
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class getRMClass() {
         return Section.class;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Set<String> getNonTemplateFields() {
         return Collections.emptySet();

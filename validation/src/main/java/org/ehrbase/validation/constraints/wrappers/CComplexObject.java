@@ -33,10 +33,9 @@ import java.util.Map;
 /**
  * Validate a complex object
  *
- * @link https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_complex_object_class
- * <p>
- * Created by christian on 7/22/2016.
+ * <p>Created by christian on 7/22/2016.
  * @see com.nedap.archie.aom.CComplexObject
+ * @see <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_complex_object_class">openEHR RM Specification</a>
  */
 public class CComplexObject extends CConstraint implements I_CArchetypeConstraintValidate {
 
@@ -46,6 +45,7 @@ public class CComplexObject extends CConstraint implements I_CArchetypeConstrain
         super(localTerminologyLookup);
     }
 
+    // TODO
     public void validate(String path, Object value, ARCHETYPECONSTRAINT constraint) throws IllegalArgumentException {
 
         CCOMPLEXOBJECT ccomplexobject = (CCOMPLEXOBJECT) constraint;

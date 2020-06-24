@@ -27,20 +27,32 @@ import java.util.stream.Stream;
 
 import static org.ehrbase.client.terminology.TerminologyProvider.OPENEHR;
 
+/**
+ * Specific introspect config class, for {@link EventContext}.
+ */
 public class EventContextIntrospectConfig implements RmIntrospectConfig {
 
     private static final Set<String> FIELDS = Stream.of("startTime", "endTime", "location", "setting", "healthCareFacility", "participations").collect(Collectors.toSet());
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class getRMClass() {
         return EventContext.class;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Set<String> getNonTemplateFields() {
         return FIELDS;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ValueSet findExternalValueSet(String fieldName) {
         switch (fieldName) {

@@ -33,8 +33,11 @@ public class AttributeGroupMap {
 
     /**
      * maps an attribute id to a given group/codeset depending on the language
+     *
+     * @param attribute TODO-285
+     * @param container TODO-285
+     * @param idMap TODO-285
      **/
-
     public AttributeGroupMap(String attribute, String container, Map<String, String> idMap) {
         this.attribute = attribute;
         this.container = ContainerType.valueOf(container.toUpperCase());
@@ -48,7 +51,7 @@ public class AttributeGroupMap {
     /**
      * specifies whether the codes belong to a group in a codeset or a plain codeset
      *
-     * @return
+     * @return TODO-285
      */
     public ContainerType getContainer() {
         return container;

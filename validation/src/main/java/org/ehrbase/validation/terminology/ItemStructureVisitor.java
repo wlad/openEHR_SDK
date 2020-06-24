@@ -7,6 +7,7 @@ import com.nedap.archie.rm.datastructures.*;
 import com.nedap.archie.rm.datavalues.DvCodedText;
 import com.nedap.archie.rm.ehr.EhrStatus;
 import com.nedap.archie.rm.integration.GenericEntry;
+import com.sun.xml.bind.v2.TODO;
 import org.ehrbase.terminology.openehr.TerminologyService;
 import org.ehrbase.terminology.openehr.implementation.AttributeCodesetMapping;
 import org.ehrbase.terminology.openehr.implementation.LocalizedTerminologies;
@@ -58,9 +59,9 @@ public class ItemStructureVisitor implements I_ItemStructureVisitor {
     /**
      * main entry method, validate a composition.
      *
-     * @param composition
-     * @return
-     * @throws IllegalArgumentException, InternalError
+     * @param composition TODO-285
+     * @throws IllegalArgumentException TODO-285
+     * @throws InternalError TODO-285
      */
     @Override
     public void validate(Composition composition) throws IllegalArgumentException, InternalError {
@@ -100,18 +101,19 @@ public class ItemStructureVisitor implements I_ItemStructureVisitor {
 
     }
 
-    /**
+    /** TODO-285
      * main entry method, validate an arbitrary entry (evaluation, observation, instruction, action)
      *
      * @param entry
      * @return
-     * @throws IllegalArgumentException, InternalError
+     * @throws IllegalArgumentException
+     * @throws InternalError
      */
     private void validate(Entry entry) throws IllegalArgumentException, InternalError {
         traverse(entry);
     }
 
-    /**
+    /** TODO-285
      * convenience method for processing an Evaluation
      *
      * @param entry
@@ -125,7 +127,7 @@ public class ItemStructureVisitor implements I_ItemStructureVisitor {
         traverse(entry);
     }
 
-    /**
+    /** TODO-285
      * convenience method for processing an Observation
      *
      * @param entry
@@ -139,7 +141,7 @@ public class ItemStructureVisitor implements I_ItemStructureVisitor {
         traverse(entry);
     }
 
-    /**
+    /** TODO-285
      * convenience method for processing an Instruction
      *
      * @param entry
@@ -153,7 +155,7 @@ public class ItemStructureVisitor implements I_ItemStructureVisitor {
         traverse(entry);
     }
 
-    /**
+    /** TODO-285
      * convenience method for processing an Instruction
      *
      * @param entry
@@ -167,7 +169,7 @@ public class ItemStructureVisitor implements I_ItemStructureVisitor {
         traverse(entry);
     }
 
-    /**
+    /** TODO-285
      * convenience method for processing an Activity
      *
      * @param entry
@@ -181,12 +183,13 @@ public class ItemStructureVisitor implements I_ItemStructureVisitor {
         traverse(entry);
     }
 
+    // TODO-285
 //	public void setMode(WalkerOutputMode mode) {
 //		this.tag_mode = mode;
 //	}
 
 
-    /**
+    /** TODO-285
      * domain level: Observation, evaluation, instruction, action. section, admin etc.
      *
      * @param item
@@ -289,7 +292,7 @@ public class ItemStructureVisitor implements I_ItemStructureVisitor {
     }
 
 
-    /**
+    /** TODO-285
      * History level in composition
      *
      * @param item
@@ -322,7 +325,7 @@ public class ItemStructureVisitor implements I_ItemStructureVisitor {
         }
     }
 
-    /**
+    /** TODO-285
      * ItemStructure: single, tree or table
      *
      * @param item
@@ -388,7 +391,7 @@ public class ItemStructureVisitor implements I_ItemStructureVisitor {
         }
     }
 
-    /**
+    /** TODO-285
      * Element level, normally cannot go deeper...
      *
      * @param item

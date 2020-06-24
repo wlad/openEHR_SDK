@@ -30,9 +30,10 @@ public interface CompositionEndpoint {
      * Save a Flat-Entity to remote systems.
      *
      * @param entity Flat-Entity to save. Has to be annotated with {@link Template}
+     * @param <T> TODO-285
      * @return CompositionId
-     * @throws ClientException
-     * @throws WrongStatusCodeException
+     * @throws ClientException TODO-285
+     * @throws WrongStatusCodeException TODO-285
      */
     <T> T mergeCompositionEntity(T entity);
 
@@ -41,9 +42,10 @@ public interface CompositionEndpoint {
      *
      * @param compositionId CompositionId of the flat-Entity to retrieve.
      * @param clazz         class of the flat-Entity to retrieve. Has to be annotated with {@link Template}
+     * @param <T> TODO-285
      * @return The Flat-Entity
-     * @throws ClientException
-     * @throws WrongStatusCodeException
+     * @throws ClientException TODO-285
+     * @throws WrongStatusCodeException TODO-285
      */
     <T> Optional<T> find(UUID compositionId, Class<T> clazz);
 }

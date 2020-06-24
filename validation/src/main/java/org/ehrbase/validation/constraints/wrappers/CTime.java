@@ -33,10 +33,9 @@ import java.util.Map;
 /**
  * Validate a DvTime
  *
- * @link https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_time_class
- * <p>
- * Created by christian on 7/22/2016.
+ * <p>Created by christian on 7/22/2016.
  * @see DvTime
+ * @see <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_time_class">openEHR RM Specification</a>
  */
 public class CTime extends CConstraint implements I_CTypeValidate {
     CTime(Map<String, Map<String, String>> localTerminologyLookup) {
@@ -64,6 +63,7 @@ public class CTime extends CConstraint implements I_CTypeValidate {
         validateTimeZone(path, time, ctime);
     }
 
+    // TODO
     private void validateTimeZone(String path, DvTime dvTime, CTIME ctime) throws IllegalArgumentException {
 //        if (ctime.isSetTimezoneValidity() && ctime.getTimezoneValidity().equals(new BigInteger("1001")) && dvTime.getDateTime().getZone() == null) {
 //            ValidationException.raise(path, "Time zone is mandatory", "DATE02");

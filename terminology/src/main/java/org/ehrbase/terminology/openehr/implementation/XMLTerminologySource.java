@@ -52,6 +52,9 @@ public class XMLTerminologySource implements TerminologySource {
 
     /**
      * Gets an terminology source loaded with specified xml content
+     *
+     * @param xmlfilename TODO-285
+     * @return TODO-285
      */
     public static XMLTerminologySource getInstance(String xmlfilename) throws TerminologyResourceException {
         return new XMLTerminologySource(xmlfilename);

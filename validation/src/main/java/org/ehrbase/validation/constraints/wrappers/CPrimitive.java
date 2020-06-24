@@ -28,9 +28,8 @@ import java.util.Map;
 /**
  * Validate a primitive
  *
- * @link https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_primitive_object_class
- * <p>
- * Created by christian on 7/24/2016.
+ * <p>Created by christian on 7/24/2016.
+ * @see <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_primitive_object_class">openEHR RM Specification</a>
  */
 public class CPrimitive extends CConstraint implements I_CArchetypeConstraintValidate {
     CPrimitive(Map<String, Map<String, String>> localTerminologyLookup) {
@@ -41,6 +40,7 @@ public class CPrimitive extends CConstraint implements I_CArchetypeConstraintVal
     public void validate(String path, Object aValue, ARCHETYPECONSTRAINT archetypeconstraint) throws IllegalArgumentException {
 
         String rmTypeName = ((CPRIMITIVEOBJECT) archetypeconstraint).getRmTypeName();
+        // TODO
 //        SchemaType type = I_CArchetypeConstraintValidate.findSchemaType("C_"+((CPRIMITIVEOBJECT)archetypeconstraint).getRmTypeName());
 //        Object constraint = archetypeconstraint.changeType(type);
 

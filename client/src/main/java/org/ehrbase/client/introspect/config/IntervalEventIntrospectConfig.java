@@ -25,20 +25,32 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Specific introspect config class, for {@link IntervalEvent}.
+ */
 public class IntervalEventIntrospectConfig implements RmIntrospectConfig {
 
     private static final Set<String> FIELDS = Stream.of("time", "width", "mathFunction").collect(Collectors.toSet());
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class getRMClass() {
         return IntervalEvent.class;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Set<String> getNonTemplateFields() {
         return FIELDS;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ValueSet findExternalValueSet(String fieldName) {
         switch (fieldName) {

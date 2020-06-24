@@ -29,10 +29,9 @@ import java.util.Map;
 /**
  * Validate a DvDuration
  *
- * @link https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_duration_class
- * <p>
- * Created by christian on 7/23/2016.
+ * <p>Created by christian on 7/23/2016.
  * @see com.nedap.archie.aom.primitives.CDuration
+ * @see <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_duration_class">openEHR RM Specification</a>
  */
 public class CDuration extends CConstraint implements I_CTypeValidate {
 
@@ -40,6 +39,7 @@ public class CDuration extends CConstraint implements I_CTypeValidate {
         super(localTerminologyLookup);
     }
 
+    // TODO
     @Override
     public void validate(String path, Object aValue, CPRIMITIVE cprimitive) {
         CDURATION cduration = (CDURATION) cprimitive;

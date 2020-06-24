@@ -31,8 +31,8 @@ public interface EhrEndpoint {
      * Create a new Ehr.
      *
      * @return ehrID
-     * @throws ClientException
-     * @throws WrongStatusCodeException
+     * @throws ClientException TODO-285
+     * @throws WrongStatusCodeException TODO-285
      */
     UUID createEhr();
 
@@ -41,8 +41,8 @@ public interface EhrEndpoint {
      *
      * @param ehrId Id of the ehr from which to return the status.
      * @return {@link EhrStatus}
-     * @throws ClientException
-     * @throws WrongStatusCodeException
+     * @throws ClientException TODO-285
+     * @throws WrongStatusCodeException TODO-285
      */
     Optional<EhrStatus> getEhrStatus(UUID ehrId);
 
@@ -51,8 +51,8 @@ public interface EhrEndpoint {
      *
      * @param ehrId     EhrId of the ehr which will be updated
      * @param ehrStatus new ehrStatus
-     * @throws ClientException
-     * @throws WrongStatusCodeException
+     * @throws ClientException TODO-285
+     * @throws WrongStatusCodeException TODO-285
      */
     void updateEhrStatus(UUID ehrId, EhrStatus ehrStatus);
 }

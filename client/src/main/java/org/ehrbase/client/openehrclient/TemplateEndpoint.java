@@ -28,10 +28,10 @@ public interface TemplateEndpoint {
     /**
      * Find a template by templateId
      *
-     * @param templateId
+     * @param templateId TODO-285
      * @return {@link OPERATIONALTEMPLATE}
-     * @throws ClientException
-     * @throws WrongStatusCodeException
+     * @throws ClientException TODO-285
+     * @throws WrongStatusCodeException TODO-285
      */
     Optional<OPERATIONALTEMPLATE> findTemplate(String templateId);
 
@@ -39,8 +39,8 @@ public interface TemplateEndpoint {
      * Ensure that the Template with {@code templateId} exists in the remote system.
      *
      * @param templateId Id of the template to check
-     * @throws ClientException
-     * @throws WrongStatusCodeException
+     * @throws ClientException TODO-285
+     * @throws WrongStatusCodeException TODO-285
      */
     void ensureExistence(String templateId);
 

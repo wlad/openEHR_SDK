@@ -22,14 +22,22 @@ import com.nedap.archie.rm.datastructures.ItemTree;
 import java.util.Collections;
 import java.util.Set;
 
+/**
+ * Specific introspect config class, for {@link ItemTree}.
+ */
 public class ItemTreeIntrospectConfig implements RmIntrospectConfig {
 
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class getRMClass() {
         return ItemTree.class;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Set<String> getNonTemplateFields() {
         return Collections.emptySet();

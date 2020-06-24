@@ -116,9 +116,8 @@ public class OptSkeletonBuilder {
     /**
      * Generate empty Rm from template
      *
-     * @param opt
-     * @return
-     * @throws Exception
+     * @param opt TODO-285
+     * @return TODO-285
      */
     public RMObject generate(OPERATIONALTEMPLATE opt) {
         CARCHETYPEROOT def = opt.getDefinition();
@@ -130,11 +129,10 @@ public class OptSkeletonBuilder {
 
 
     /**
-     * @param opt
-     * @param def
-     * @param path
-     * @return
-     * @throws Exception
+     * @param opt TODO-285
+     * @param def TODO-285
+     * @param path TODO-285
+     * @return TODO-285
      */
     private Object handleArchetypeRoot(OPERATIONALTEMPLATE opt,
                                        CARCHETYPEROOT def, String path) {
@@ -160,10 +158,10 @@ public class OptSkeletonBuilder {
     /**
      * Load complex component
      *
-     * @param opt
-     * @param ccobj
-     * @param termDef
-     * @return
+     * @param opt TODO-285
+     * @param ccobj TODO-285
+     * @param termDef TODO-285
+     * @return TODO-285
      */
     private Object handleComplexObject(OPERATIONALTEMPLATE opt,
                                        CCOMPLEXOBJECT ccobj, Map<String, String> termDef,

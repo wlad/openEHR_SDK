@@ -32,9 +32,8 @@ import java.util.Map;
 /**
  * Validate an RM object
  *
- * @link https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_object_class
- * <p>
- * Created by christian on 7/23/2016.
+ * <p>Created by christian on 7/23/2016.
+ * @see <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_object_class">openEHR RM Specification</a>
  */
 public class CObject extends CConstraint implements I_CArchetypeConstraintValidate {
 

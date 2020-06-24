@@ -19,9 +19,14 @@ package org.ehrbase.client.introspect.config;
 
 import com.nedap.archie.rm.composition.Observation;
 
+/**
+ * Specific introspect config class, for {@link Observation}.
+ */
 public class ObservationIntrospectConfig extends CareEntryIntrospectConfig implements RmIntrospectConfig {
 
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class getRMClass() {
         return Observation.class;

@@ -30,9 +30,8 @@ import java.util.Map;
 /**
  * Validate a single attribute object
  *
- * @link https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_single_attribute_class
- * <p>
- * Created by christian on 7/23/2016.
+ * <p>Created by christian on 7/23/2016.
+ * @see <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_single_attribute_class">openEHR RM Specification</a>
  */
 public class CSingleAttribute extends CConstraint implements I_CArchetypeConstraintValidate {
 

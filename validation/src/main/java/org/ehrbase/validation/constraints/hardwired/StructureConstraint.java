@@ -33,10 +33,9 @@ import org.openehr.schemas.v1.CMULTIPLEATTRIBUTE;
 /**
  * Validate an Event node
  *
- * @link https://specifications.openehr.org/releases/RM/latest/data_structures.html#_event_t_class
- * <p>
- * Created by christian on 8/11/2016.
+ * <p>Created by christian on 8/11/2016.
  * @see com.nedap.archie.rm.datastructures.PointEvent
+ * @see <a href="https://specifications.openehr.org/releases/RM/latest/data_structures.html#_event_t_class">openEHR RM Specification</a>
  */
 public abstract class StructureConstraint {
     private final ConstraintMapper constraintMapper;
@@ -50,7 +49,7 @@ public abstract class StructureConstraint {
      *
      * @param path              the node path
      * @param eventsOccurrences the identified event occurrences
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException TODO-285
      */
     public void validate(String path, Integer eventsOccurrences) throws IllegalArgumentException {
 

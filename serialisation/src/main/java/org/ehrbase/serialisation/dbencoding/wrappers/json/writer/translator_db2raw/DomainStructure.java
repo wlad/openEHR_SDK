@@ -35,7 +35,7 @@ public class DomainStructure {
     /**
      * is it a composition structure element?
      *
-     * @return
+     * @return TODO-285
      */
     public boolean isArchetypeSlot() {
         return nodeIdentifier.contains(OPEN_EHR_EHR);

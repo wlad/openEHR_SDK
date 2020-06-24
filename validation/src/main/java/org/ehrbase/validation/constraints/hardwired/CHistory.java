@@ -28,10 +28,9 @@ import org.ehrbase.validation.constraints.wrappers.ValidationException;
 /**
  * Validate an RM HISTORY node
  *
- * @link https://specifications.openehr.org/releases/RM/latest/data_structures.html#_history_t_class
- * <p>
- * Created by christian on 8/11/2016.
+ * <p>Created by christian on 8/11/2016.
  * @see History
+ * @see <a href="https://specifications.openehr.org/releases/RM/latest/data_structures.html#_history_t_class">openEHR RM Specification</a>
  */
 public class CHistory extends StructureConstraint implements I_CHWConstraintValidate {
 

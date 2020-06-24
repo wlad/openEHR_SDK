@@ -22,12 +22,28 @@ import org.ehrbase.client.terminology.ValueSet;
 import java.util.Collections;
 import java.util.Set;
 
+/**
+ * Common interface for config sub-classes, each for one type of openEHR RM 'container' class.
+ */
 public interface RmIntrospectConfig {
 
+    /**
+     * Gets class.
+     * @return Archie RM class matching the type
+     */
     Class getRMClass();
 
+    /**
+     * Gets a list of all non-template fields.
+     * @return Set of fields as Strings.
+     */
     Set<String> getNonTemplateFields();
 
+    /**
+     * Finds and returns a matching value in the class' terminology.
+     * @param fieldName Given field name
+     * @return Matching terminology value set
+     */
     default ValueSet findExternalValueSet(String fieldName) {
         return new ValueSet(ValueSet.LOCAL, Collections.emptySet());
     }

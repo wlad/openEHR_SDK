@@ -75,8 +75,8 @@ public class Cardinality {
      * check if the parent container is *really* optional, that is its lower cardinality is 0 and it is not used...
      * NB. There are many discussions about this cardinality problem, presumably fixed with ADL2 (?)
      *
-     * @param path
-     * @return
+     * @param path TODO-285
+     * @return TODO-285
      */
     public boolean isTransitivelyOptional(String path) {
 

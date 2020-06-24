@@ -13,7 +13,7 @@ public class Elements {
     /**
      * check if an element is containing any significant values to be serialized (e.g. stored) to DB
      *
-     * @return
+     * @return TODO-285
      */
     public boolean isVoid() {
         return (element.getValue() == null &&

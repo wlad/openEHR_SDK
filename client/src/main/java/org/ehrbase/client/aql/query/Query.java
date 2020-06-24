@@ -31,41 +31,82 @@ import org.ehrbase.client.aql.record.Record3;
 
 import java.util.Arrays;
 
+/**
+ * TODO-285: docs
+ * @param <T> TODO-285
+ */
 public interface Query<T extends Record> {
 
+    // TODO-285: doc or, if not used: remove or is it used by clients?
     static Query<Record> buildNativeQuery(String aql, Class<?>... expected) {
         return new NativeQuery<>(aql, Arrays.stream(expected).map(AqlField::create).toArray(AqlField<?>[]::new));
     }
 
+    /**
+     * Builds {@link Query} representation from a native string query and inputted expected response class(es).
+     *
+     * <p>This method supports one expected response type. See the following methods for the support of more.
+     * @param aql Native AQL query string.
+     * @param expected1 Class of expected response variable.
+     * @param <T1> Expected response variable type.
+     * @return Query object representation of the given query and parameters, which allows further usage, like execution of the query.
+     */
     static <T1> Query<Record1<T1>> buildNativeQuery(String aql, Class<T1> expected1) {
         return new NativeQuery<>(aql, AqlField.create(expected1));
     }
 
+    /**
+     * Please see the base method {@link #buildNativeQuery(String aql, Class expected)}.
+     *
+     * @param aql TODO-285
+     * @param <T1> TODO-285
+     * @param expected1 TODO-285
+     * @param <T2> TODO-285
+     * @param expected2 TODO-285
+     * @return TODO-285
+     */
     static <T1, T2> Query<Record2<T1, T2>> buildNativeQuery(String aql, Class<T1> expected1, Class<T2> expected2) {
         return new NativeQuery<>(aql, AqlField.create(expected1), AqlField.create(expected2));
     }
 
+    /**
+     * Please see the base method {@link #buildNativeQuery(String aql, Class expected)}.
+     *
+     * @param aql TODO-285
+     * @param <T1> TODO-285
+     * @param expected1 TODO-285
+     * @param <T2> TODO-285
+     * @param expected2 TODO-285
+     * @param <T3> TODO-285
+     * @param expected3 TODO-285
+     * @return TODO-285
+     */
     static <T1, T2, T3> Query<Record3<T1, T2, T3>> buildNativeQuery(String aql, Class<T1> expected1, Class<T2> expected2, Class<T3> expected3) {
         return new NativeQuery<>(aql, AqlField.create(expected1), AqlField.create(expected2), AqlField.create(expected3));
     }
 
+    // TODO-285: doc or, if not used: remove or is it used by clients?
     static Containment buildContainment(Class<?> entityClass) {
         Archetype annotation = entityClass.getAnnotation(Archetype.class);
         return new Containment(annotation.value());
     }
 
+    // TODO-285: docs
     static EntityQuery<Record> buildEntityQuery(ContainmentExpression containment, SelectAqlField<?>... selectFields) {
         return new EntityQuery<>(containment, selectFields);
     }
 
+    // TODO-285: docs
     static <T1> EntityQuery<Record1<T1>> buildEntityQuery(ContainmentExpression containment, SelectAqlField<T1> selectField1) {
         return new EntityQuery<>(containment, selectField1);
     }
 
+    // TODO-285: docs
     static <T1, T2> EntityQuery<Record2<T1, T2>> buildEntityQuery(ContainmentExpression containment, SelectAqlField<T1> selectField1, SelectAqlField<T2> selectField2) {
         return new EntityQuery<>(containment, selectField1, selectField2);
     }
 
+    // TODO-285: docs
     static <T1, T2, T3> EntityQuery<Record3<T1, T2, T3>> buildEntityQuery(ContainmentExpression containment, SelectAqlField<T1> selectField1, SelectAqlField<T2> selectField2, SelectAqlField<T3> selectField3) {
         return new EntityQuery<>(containment, selectField1, selectField2, selectField3);
     }

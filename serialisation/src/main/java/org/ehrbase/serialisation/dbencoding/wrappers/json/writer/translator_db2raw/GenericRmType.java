@@ -22,7 +22,7 @@ import com.google.gson.internal.LinkedTreeMap;
 import java.util.Map;
 
 /**
- * Deals with specialization of DataValues (f.e. DV_INTERVAL<DV_QUANTITY>)
+ * Deals with specialization of DataValues (f.e. {@literal DV_INTERVAL<DV_QUANTITY>}).
  */
 public class GenericRmType {
 

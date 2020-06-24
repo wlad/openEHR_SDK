@@ -31,12 +31,17 @@ public abstract class CareEntryIntrospectConfig implements RmIntrospectConfig {
 
     private static final Set<String> FIELDS = Stream.of("language", "subject").collect(Collectors.toSet());
 
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Set<String> getNonTemplateFields() {
         return FIELDS;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ValueSet findExternalValueSet(String fieldName) {
         switch (fieldName) {

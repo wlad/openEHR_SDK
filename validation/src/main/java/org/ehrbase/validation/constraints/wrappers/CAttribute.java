@@ -39,10 +39,9 @@ import java.util.Map;
 /**
  * validate the constraints for an attribute node
  *
- * @link https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_attribute_class
- * <p>
- * Created by christian on 7/23/2016.
+ * <p>Created by christian on 7/23/2016.
  * @see com.nedap.archie.aom.CAttribute
+ * @see <a href="https://specifications.openehr.org/releases/AM/latest/AOM1.4.html#_c_attribute_class">openEHR RM Specification</a>
  */
 public class CAttribute extends CConstraint implements I_CArchetypeConstraintValidate {
 
@@ -54,6 +53,7 @@ public class CAttribute extends CConstraint implements I_CArchetypeConstraintVal
 
     @Override
     public void validate(String path, Object aValue, ARCHETYPECONSTRAINT archetypeconstraint) throws IllegalArgumentException {
+        // TODO
 //        if (!(archetypeconstraint instanceof CATTRIBUTE))
 //            throw new IllegalArgumentException("INTERNAL: constraint is not a C_ATTRIBUTE");
 

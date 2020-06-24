@@ -64,7 +64,7 @@ public class DBEncodeTest {
      * NB. At this stage, the tests are fairly basic, what is needed is an actual comparison between the original
      * composition and the resulting one after the transformation cycle.
      *
-     * @throws Exception
+     * @throws Exception TODO-285
      */
     @Test
     public void testDBEncodeDecode() throws Exception {

@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * Abstract class for all constraints
  *
- * @link Created by christian on 8/10/2016.
+ * <p>Created by christian on 8/10/2016.
  */
 public abstract class CConstraint {
 

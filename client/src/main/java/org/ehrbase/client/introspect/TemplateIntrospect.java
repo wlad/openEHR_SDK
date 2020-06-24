@@ -78,6 +78,14 @@ public class TemplateIntrospect {
 
     }
 
+    // TODO-285: this is the only dependency for the B) path. After this is understood, thinking about making another module or moving this class into generation can continue.
+    /**
+     * TODO-285: WIP doc:
+     * Used by {@link TemplateIntrospect} and {@link org.ehrbase.client.building.OptSkeletonBuilder} as config.
+     *
+     * @return Collection of all openEHR RM 'container' classes, which can be expected during the following introspect,
+     * including their config, stating their Archie type and fields.
+     */
     public static Map<Class, RmIntrospectConfig> buildConfigMap() {
 
         Reflections reflections = new Reflections(RmIntrospectConfig.class.getPackage().getName());

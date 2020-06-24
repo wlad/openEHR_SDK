@@ -85,12 +85,14 @@ public class CObjectConstraint extends ElementConstraint {
         return true;
     }
 
+    // TODO
 //    private Class findImplementingConstraintClass(String rmTypeName) throws ClassNotFoundException {
 ////        String constraintTypeName = ("C_"+rmTypeName).replaceAll("_", "");
 //        Class contraintTypeClass = Class.forName(constraint.schemaType().getFullJavaImplName().split(".impl")[0]+"."+constraintTypeName);
 //        return contraintTypeClass;
 //    }
 
+    // TODO
 //    private Class findImplementingConstraintClass(String rmTypeName) throws ClassNotFoundException {
 //        String constraintTypeName = ("C_"+rmTypeName).replaceAll("_", "");
 //        Class contraintTypeClass = Class.forName(constraint.schemaType().getFullJavaImplName().split(".impl")[0]+"."+constraintTypeName);

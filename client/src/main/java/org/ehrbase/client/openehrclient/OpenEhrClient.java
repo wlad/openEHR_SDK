@@ -24,7 +24,7 @@ public interface OpenEhrClient {
     /**
      * Get the {@link EhrEndpoint}
      *
-     * @return
+     * @return TODO-285
      */
     EhrEndpoint ehrEndpoint();
 
@@ -32,7 +32,7 @@ public interface OpenEhrClient {
      * Get the {@link CompositionEndpoint} for ehr with Id {@code ehrId}
      *
      * @param ehrId ehrId of ehr for which to revive compositions
-     * @return
+     * @return TODO-285
      */
     CompositionEndpoint compositionEndpoint(UUID ehrId);
 
@@ -41,14 +41,14 @@ public interface OpenEhrClient {
     /**
      * Get the {@link TemplateEndpoint}
      *
-     * @return
+     * @return TODO-285
      */
     TemplateEndpoint templateEndpoint();
 
     /**
      * Get the {@link AqlEndpoint}
      *
-     * @return
+     * @return TODO-285
      */
     AqlEndpoint aqlEndpoint();
 }
