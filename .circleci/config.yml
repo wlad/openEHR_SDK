@@ -234,33 +234,33 @@ jobs:
 
 
   build-openEHR_SDK:
-    executor: docker-python3-java11
-    # executor: vm-ubuntu-1604            # (use for pipeline debugging only)
+    # executor: docker-python3-java11
+    executor: vm-ubuntu-1604            # (use for pipeline debugging only)
     steps:
-      - checkout
-      - cache-out-sdk-m2-dependencies
-      - build-and-test-sdk
-      - cache-in-sdk-m2-dependencies
-      - save-sdk-unittest-results
-      - save-sdk-workspace
-      # - run: echo mock build SDK        # use this steps for pipeline debugging only
+      # - checkout
+      # - cache-out-sdk-m2-dependencies
+      # - build-and-test-sdk
+      # - cache-in-sdk-m2-dependencies
+      # - save-sdk-unittest-results
+      # - save-sdk-workspace
+      - run: echo mock build SDK        # use this steps for pipeline debugging only
       # - cache-out-sdk-workspace         #
       # - cache-in-sdk-workspace          #
 
 
   build-EHRbase:
-    executor: docker-py3-java11-postgres
-    # executor: vm-ubuntu-1604            # (use for pipeline debugging only)
+    # executor: docker-py3-java11-postgres
+    executor: vm-ubuntu-1604            # (use for pipeline debugging only)
     steps:
-      - checkout
-      - restore-sdk-workspace
-      - git-clone-ehrbase-repo
-      - cache-out-ehrbase-m2-dependencies
-      - force-ehrbase-to-use-local-sdk-version
-      - build-and-test-ehrbase
-      - cache-in-ehrbase-m2-dependencies
-      - save-ehrbase-workspace
-      # - run: echo mock buidl EHRbasee   # use this steps for pipeline debugging only
+      # - checkout
+      # - restore-sdk-workspace
+      # - git-clone-ehrbase-repo
+      # - cache-out-ehrbase-m2-dependencies
+      # - force-ehrbase-to-use-local-sdk-version
+      # - build-and-test-ehrbase
+      # - cache-in-ehrbase-m2-dependencies
+      # - save-ehrbase-workspace
+      - run: echo mock buidl EHRbasee   # use this steps for pipeline debugging only
       # - cache-in-ehrbase-workspace      #
 
 
@@ -373,8 +373,8 @@ jobs:
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
       # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      # - cache-out-ehrbase-workspace                   #
-      - restore-ehrbase-workspace
+      - cache-out-ehrbase-workspace                   #
+      # - restore-ehrbase-workspace
       - start-ehrbase-server
       - run-robot-tests:
           include-tags: "KNOWLEDGE"
@@ -754,8 +754,10 @@ commands:
           command: |
             ls -la
             cd ehrbase
+            EHRbase_VERSION=$(mvn -q -Dexec.executable="echo" -Dexec.args='${project.version}' --non-recursive exec:exec)
+            echo ${EHRbase_VERSION}
             # java -jar application/target/application-0.13.0.jar --cache.enabled=false --system.allow-template-overwrite=true > log
-            java -jar application/target/application-0.13.0.jar --cache.enabled=false > log
+            java -jar application/target/application-${EHRbase_VERSION}.jar --cache.enabled=false > log
 
 
   # USE THIS COMMAND W/ DOCKER EXECUTOR ONLY!!! 
