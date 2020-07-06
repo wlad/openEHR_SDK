@@ -6,7 +6,9 @@ version: 2.1
 # 3. run all integation tests suites
 #    - setup test environment
 #    - execute robot tests
-# 4. publish snapshot & release artifacts on jitpack.io
+# 4. publish snapshot & release versions on jitpack.io
+#    - after manually creating a release (via Github UI) based on one of these versions
+#    - jitpack will build related artifacts on demand
 
 
 workflows:
@@ -54,119 +56,119 @@ workflows:
                 - develop
                 - release
 
-      # - COMPOSITION-tests-3:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - COMPOSITION-tests-3:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - COMPOSITION-tests-4:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - COMPOSITION-tests-4:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - CONTRIBUTION-tests:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - CONTRIBUTION-tests:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - DIRECTORY-tests:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - DIRECTORY-tests:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - EHRSERVICE-tests:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - EHRSERVICE-tests:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
       
-      # - EHRSTATUS-tests:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - EHRSTATUS-tests:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
       
-      # - KNOWLEDGE-tests:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - KNOWLEDGE-tests:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - QUERYSERVICE-tests-1:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - QUERYSERVICE-tests-1:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - QUERYSERVICE-tests-2:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - QUERYSERVICE-tests-2:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
       - ROBOT-TEST-REPORT:
           context: org-global
           requires:
             - COMPOSITION-tests-1
             - COMPOSITION-tests-2
-            # - COMPOSITION-tests-3
-            # - COMPOSITION-tests-4
-            # - CONTRIBUTION-tests
-            # - DIRECTORY-tests
-            # - EHRSERVICE-tests
-            # - EHRSTATUS-tests
-            # - KNOWLEDGE-tests
-            # - QUERYSERVICE-tests-1
-            # - QUERYSERVICE-tests-2
+            - COMPOSITION-tests-3
+            - COMPOSITION-tests-4
+            - CONTRIBUTION-tests
+            - DIRECTORY-tests
+            - EHRSERVICE-tests
+            - EHRSTATUS-tests
+            - KNOWLEDGE-tests
+            - QUERYSERVICE-tests-1
+            - QUERYSERVICE-tests-2
           filters:
             branches:
               ignore:
@@ -202,17 +204,17 @@ workflows:
 
 
 
-  # WORKFLOW 4/4) Update SDK version in EHRbase's POM /w lastest stable release
-  update-ehrbase-sdk-dependency:
-    when:
-      and:
-        - equal: [ master, << pipeline.git.branch >> ]
-    jobs:
-      - approve-sdk-version-update:
-          type: approval
-      - update-ehrbase-sdk-dependency:
-          requires:
-            - approve-sdk-version-update
+  # # WORKFLOW 4/4) Update SDK version in EHRbase's POM /w lastest stable release
+  # update-ehrbase-sdk-dependency:
+  #   when:
+  #     and:
+  #       - equal: [ master, << pipeline.git.branch >> ]
+  #   jobs:
+  #     - approve-sdk-version-update:
+  #         type: approval
+  #     - update-ehrbase-sdk-dependency:
+  #         requires:
+  #           - approve-sdk-version-update
 
 
 
@@ -463,18 +465,6 @@ commands:
   #     `"Y8888Y"'    `"Y8888Y"'    88     `8'     88  88     `8'     88  d8'          `8b  88      `888  88888888Y"'     "Y88888P"
 
 
-  cache-out-versionupdater-dependencies:
-    steps:
-      - restore_cache:
-          key: maven-dep-v1-
-
-  cache-in-versionupdater-dependencies:
-    steps:
-      - save_cache:
-          key: maven-dep-v1-
-          paths:
-            - ~/.m2
-
   update-and-publish-snapshot-release-version:
     steps:
       - run: sudo apt install maven -y
@@ -580,6 +570,18 @@ commands:
             sudo apt -y update && sudo apt -y install xmlstarlet=1.6.1-2
   
 
+  cache-out-versionupdater-dependencies:
+    steps:
+      - restore_cache:
+          key: maven-dep-v1-
+
+  cache-in-versionupdater-dependencies:
+    steps:
+      - save_cache:
+          key: maven-dep-v1-
+          paths:
+            - ~/.m2
+
 
 
 
@@ -633,8 +635,8 @@ commands:
       - attach_workspace:
           at: /home/circleci/
 
-  # NOTE: don't use these two steps in production
-  #       this is just for testing ci pipeline w/ mocked jobs/steps
+  # WARNING: don't use these two steps in production
+  #          use them for pipeline debugging only!
   cache-in-sdk-workspace:
     steps:
       - save_cache:
@@ -712,8 +714,8 @@ commands:
             cd ~/projects/ehrbase
             xmlstarlet edit --inplace -N my=http://maven.apache.org/POM/4.0.0 -u my:project/my:version -v $SDK_VERSION pom.xml
     
-  # NOTE: don't use these two steps in production
-  #       this is just for testing ci pipeline w/ mocked jobs/steps
+  # WARNING: don't use these two steps in production
+  #          use them for pipeline debugging only!
   cache-in-ehrbase-workspace:
     steps:
       - save_cache:
@@ -913,7 +915,7 @@ commands:
   merge-robot-outputs:
     description: Merge Robot Results from Parallel Tests
     steps:
-      # - configure-python-version                    # (use on machin executor only)
+      # - configure-python-version                    # (use w/ machine executor only)
       - run:
           command: |
             pip install robotframework
@@ -985,8 +987,8 @@ executors:
 
   vm-ubuntu-1604:
     working_directory: ~/projects
-    # working_directory: /mnt/ramdisk
-    machine:
+    # working_directory: /mnt/ramdisk      # TODO: @wlad TEST THIS FOR POSIBLE
+    machine:                               #             SPEED IMPROVEMENT !!!
       image: ubuntu-1604:201903-01
 
 
