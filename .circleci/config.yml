@@ -34,93 +34,93 @@ workflows:
                 - develop
                 - release
 
-      # - COMPOSITION-tests-1:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - COMPOSITION-tests-1:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - COMPOSITION-tests-2:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - COMPOSITION-tests-2:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - COMPOSITION-tests-3:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - COMPOSITION-tests-3:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - COMPOSITION-tests-4:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - COMPOSITION-tests-4:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - CONTRIBUTION-tests:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - CONTRIBUTION-tests:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - DIRECTORY-tests:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - DIRECTORY-tests:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - EHRSERVICE-tests:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - EHRSERVICE-tests:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
       
-      # - EHRSTATUS-tests:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - EHRSTATUS-tests:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
       
       - KNOWLEDGE-tests:
           context: org-global
@@ -133,48 +133,48 @@ workflows:
                 - develop
                 - release
 
-      # - QUERYSERVICE-tests-1:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - QUERYSERVICE-tests-1:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - QUERYSERVICE-tests-2:
-      #     context: org-global
-      #     requires:
-      #       - build-EHRbase
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - QUERYSERVICE-tests-2:
+          context: org-global
+          requires:
+            - build-EHRbase
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
-      # - ROBOT-TEST-REPORT:
-      #     context: org-global
-      #     requires:
-      #       - COMPOSITION-tests-1
-      #       - COMPOSITION-tests-2
-      #       - COMPOSITION-tests-3
-      #       - COMPOSITION-tests-4
-      #       - CONTRIBUTION-tests
-      #       - DIRECTORY-tests
-      #       - EHRSERVICE-tests
-      #       - EHRSTATUS-tests
-      #       - KNOWLEDGE-tests
-      #       - QUERYSERVICE-tests-1
-      #       - QUERYSERVICE-tests-2
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - master
-      #           - develop
-      #           - release
+      - ROBOT-TEST-REPORT:
+          context: org-global
+          requires:
+            - COMPOSITION-tests-1
+            - COMPOSITION-tests-2
+            - COMPOSITION-tests-3
+            - COMPOSITION-tests-4
+            - CONTRIBUTION-tests
+            - DIRECTORY-tests
+            - EHRSERVICE-tests
+            - EHRSTATUS-tests
+            - KNOWLEDGE-tests
+            - QUERYSERVICE-tests-1
+            - QUERYSERVICE-tests-2
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - release
 
 
 
@@ -234,33 +234,35 @@ jobs:
 
 
   build-openEHR_SDK:
-    # executor: docker-python3-java11
-    executor: vm-ubuntu-1604            # (use for pipeline debugging only)
+    executor: docker-python3-java11
+    # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - checkout
-      # - cache-out-sdk-m2-dependencies
-      # - build-and-test-sdk
-      # - cache-in-sdk-m2-dependencies
-      # - save-sdk-unittest-results
-      # - save-sdk-workspace
-      - run: echo mock build SDK        # use this steps for pipeline debugging only
+      - checkout
+      - cache-out-sdk-m2-dependencies
+      - build-and-test-sdk
+      - cache-in-sdk-m2-dependencies
+      - save-sdk-unittest-results
+      - save-sdk-workspace
+      #-----------------------------------#---------------(use this steps for pipeline debugging only)
+      # - run: echo mock build SDK        # 
       # - cache-out-sdk-workspace         #
       # - cache-in-sdk-workspace          #
 
 
   build-EHRbase:
-    # executor: docker-py3-java11-postgres
-    executor: vm-ubuntu-1604            # (use for pipeline debugging only)
+    executor: docker-py3-java11-postgres
+    # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - checkout
-      # - restore-sdk-workspace
-      # - git-clone-ehrbase-repo
-      # - cache-out-ehrbase-m2-dependencies
-      # - force-ehrbase-to-use-local-sdk-version
-      # - build-and-test-ehrbase
-      # - cache-in-ehrbase-m2-dependencies
-      # - save-ehrbase-workspace
-      - run: echo mock buidl EHRbasee   # use this steps for pipeline debugging only
+      - checkout
+      - restore-sdk-workspace
+      - git-clone-ehrbase-repo
+      - cache-out-ehrbase-m2-dependencies
+      - force-ehrbase-to-use-local-sdk-version
+      - build-and-test-ehrbase
+      - cache-in-ehrbase-m2-dependencies
+      - save-ehrbase-workspace
+      #-----------------------------------#---------------(use this steps for pipeline debugging only
+      # - run: echo MOCKED JOB            #
       # - cache-in-ehrbase-workspace      #
 
 
@@ -268,8 +270,10 @@ jobs:
     executor: docker-py3-java11-postgres
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      # - cache-out-ehrbase-workspace                   #
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      # - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
       - restore-ehrbase-workspace
       - start-ehrbase-server
       - run-robot-tests:
@@ -281,8 +285,10 @@ jobs:
     executor: docker-py3-java11-postgres
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      # - cache-out-ehrbase-workspace                   #
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      # - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
       - restore-ehrbase-workspace
       - start-ehrbase-server
       - run-robot-tests:
@@ -294,8 +300,10 @@ jobs:
     executor: docker-py3-java11-postgres
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      # - cache-out-ehrbase-workspace                   #
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      # - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
       - restore-ehrbase-workspace
       - start-ehrbase-server
       - run-robot-tests:
@@ -307,8 +315,10 @@ jobs:
     executor: docker-py3-java11-postgres
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      # - cache-out-ehrbase-workspace                   #
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      # - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
       - restore-ehrbase-workspace
       - start-ehrbase-server
       - run-robot-tests:
@@ -320,8 +330,10 @@ jobs:
     executor: docker-py3-java11-postgres
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      # - cache-out-ehrbase-workspace                   #
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      # - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
       - restore-ehrbase-workspace
       - start-ehrbase-server
       - run-robot-tests:
@@ -333,8 +345,10 @@ jobs:
     executor: docker-py3-java11-postgres
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      # - cache-out-ehrbase-workspace                   #
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      # - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
       - restore-ehrbase-workspace
       - start-ehrbase-server
       - run-robot-tests:
@@ -346,8 +360,10 @@ jobs:
     executor: docker-py3-java11-postgres
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      # - cache-out-ehrbase-workspace                   #
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      # - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
       - restore-ehrbase-workspace
       - start-ehrbase-server
       - run-robot-tests:
@@ -359,8 +375,10 @@ jobs:
     executor: docker-py3-java11-postgres
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      # - cache-out-ehrbase-workspace                   #
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      # - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
       - restore-ehrbase-workspace
       - start-ehrbase-server
       - run-robot-tests:
@@ -372,9 +390,11 @@ jobs:
     executor: docker-py3-java11-postgres
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      - cache-out-ehrbase-workspace                   #
-      # - restore-ehrbase-workspace
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      # - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
+      - restore-ehrbase-workspace
       - start-ehrbase-server
       - run-robot-tests:
           include-tags: "KNOWLEDGE"
@@ -385,8 +405,10 @@ jobs:
     executor: docker-py3-java11-postgres
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      # - cache-out-ehrbase-workspace                   #
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      # - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
       - restore-ehrbase-workspace
       - start-ehrbase-server
       - run-robot-tests:
@@ -398,8 +420,10 @@ jobs:
     executor: docker-py3-java11-postgres
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      # - cache-out-ehrbase-workspace                   #
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      # - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
       - restore-ehrbase-workspace
       - start-ehrbase-server
       - run-robot-tests:
@@ -411,9 +435,11 @@ jobs:
     executor: docker-py3-java11-postgres
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only)
     steps:
-      # - run: echo "run integration tests job mock"    # (use for pipeline debugging only)
-      # - cache-out-ehrbase-workspace                   #
-      # - cache-out-python-requirements
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      # - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
+      # - cache-out-python-requirements                 # TODO: @wlad find a solution: python cache not working yet
       - restore-test-results-folder
       - merge-robot-outputs
 
@@ -443,7 +469,10 @@ jobs:
     executor: docker-python3-java11
     # executor: vm-ubuntu-1604                          # (use for pipeline debugging only!)
     steps:
-      - run: echo UPDATED SKD VERSION IN EHRBASE's POM
+      #-----------------------------------#---------------(use for pipeline debugging only)
+      - run: echo MOCKED JOB            # 
+      # - cache-out-ehrbase-workspace     #
+      #-----------------------------------#
       # - checkout
       # - configure-git-for-ci-bot
       # - cache-out-versionupdater-dependencies
