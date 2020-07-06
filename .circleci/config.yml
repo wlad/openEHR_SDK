@@ -748,6 +748,7 @@ commands:
     steps:
       # - openjdk-install/openjdk:    # (use w/ machine executor only)
       #     version: 11               #
+      - run: sudo apt install maven -y
       - run:
           name: Start EHRbase server
           background: true
@@ -756,7 +757,6 @@ commands:
             cd ehrbase
             EHRbase_VERSION=$(mvn -q -Dexec.executable="echo" -Dexec.args='${project.version}' --non-recursive exec:exec)
             echo ${EHRbase_VERSION}
-            # java -jar application/target/application-0.13.0.jar --cache.enabled=false --system.allow-template-overwrite=true > log
             java -jar application/target/application-${EHRbase_VERSION}.jar --cache.enabled=false > log
 
 
