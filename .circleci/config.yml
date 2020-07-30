@@ -179,7 +179,7 @@ workflows:
       - run-static-code-analysis:
           context: org-global
           requires:
-            - build-openEHR_SDK
+            # - build-openEHR_SDK
             # - dependency-check
           filters:
             branches:
