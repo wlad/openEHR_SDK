@@ -17,8 +17,7 @@
   -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.ehrbase.openEHR_SDK</groupId>
@@ -43,6 +42,12 @@
         <maven.compiler.target>11</maven.compiler.target>
         <skipIntegrationTests>true</skipIntegrationTests>
         <jackson.version>2.10.2</jackson.version>
+
+        <!-- SonarCloud -->
+        <sonar.projectKey>wlad_openEHR_SDK</sonar.projectKey>
+        <sonar.organization>wlad</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
     </properties>
 
     <repositories>
@@ -266,7 +271,7 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
                 <version>1.7.27</version>
-             <scope>test</scope>
+                <scope>test</scope>
             </dependency>
 
             <dependency>

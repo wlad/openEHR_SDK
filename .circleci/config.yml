@@ -267,8 +267,11 @@ jobs:
       - checkout
       - cache-out-sdk-m2-dependencies
       - build-and-test-sdk
-      - sonarcloud/scan:
-          cache_version: 1
+      - run:
+          name: Analyze on SonarCloud
+          command: mvn verify sonar:sonar
+      # - sonarcloud/scan:
+      #     cache_version: 1
 
 
   build-EHRbase:
