@@ -19,12 +19,11 @@
   -->
 
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>root</artifactId>
         <groupId>com.github.ehrbase.openEHR_SDK</groupId>
-        <version>12.0.1</version>
+        <version>0.3.5</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -33,7 +32,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.ehrbase.openEHR_SDK</groupId>
-            <artifactId>client-library</artifactId>
+            <artifactId>client</artifactId>
         </dependency>
 
         <dependency>
@@ -41,10 +40,25 @@
             <artifactId>slf4j-simple</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
+
+
+
+        <!-- <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-        </dependency>
+        </dependency> -->
+
+
+        <!-- <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>org.jacoco.agent</artifactId>
+            <classifier>runtime</classifier>
+            <scope>test</scope>
+            <version>${jacoco.version}</version>
+        </dependency> -->
+
+
+
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
@@ -68,7 +82,17 @@
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
-                        <phase>prepare-package</phase>
+
+
+
+                        <!-- NOTE: I had to add this otherwise there is this issue in maven's test phase:
+                                "Failed to execute goal org.apache.maven.plugins:maven-dependency-plugin:3.1.1:copy-dependencies
+                                (copy-dependencies) on project generator: Artifact has not been packaged yet. 
+                        -->
+                        <phase>verify</phase>
+
+
+
                         <goals>
                             <goal>copy-dependencies</goal>
                         </goals>
