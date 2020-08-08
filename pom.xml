@@ -49,12 +49,6 @@
         <skipIntegrationTests>true</skipIntegrationTests>
         <include.tests>**/*Test.java</include.tests>
         <test.profile>unit</test.profile>
-
-        <!-- SonarCloud
-        <sonar.projectKey>wlad_openEHR_SDK</sonar.projectKey>
-        <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
-        <sonar.organization>wlad</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url> -->
     </properties>
 
 
@@ -223,6 +217,7 @@
                             -->
                             <excludes>
                                 <exclude>**/ClassGeneratorTest.java</exclude>
+                                <exclude>**/CoronaTestIT.java</exclude>
                             </excludes>
 
 
@@ -268,6 +263,7 @@
                             -->
                             <excludes>
                                 <exclude>**/ClassGeneratorTest.java</exclude>
+                                <exclude>**/CoronaTestIT.java</exclude>
                             </excludes>
 
 
